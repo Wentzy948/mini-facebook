@@ -1,0 +1,78 @@
+/*
+  Variables de theme (clair / sombre)
+  ------------------------------------
+  Toutes les couleurs de l'application sont definies ici sous forme de
+  "design tokens" (variables CSS). Le composant racine <html> recoit un
+  attribut data-theme="light" ou data-theme="dark" (gere par ThemeContext),
+  ce qui permet de basculer instantanement toute l'interface sans
+  recharger la page ni dupliquer les styles des composants.
+*/
+
+:root,
+[data-theme='light'] {
+  /* Couleurs de marque */
+  --color-primary: #1877f2;
+  --color-primary-hover: #166fe0;
+  --color-success: #31a24c;
+  --color-danger: #e41e3f;
+  --color-like: #1877f2;
+
+  /* Arriere-plans */
+  --color-bg: #f0f2f5;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f2f2f2;
+  --color-input-bg: #f0f2f5;
+
+  /* Textes */
+  --color-text: #050505;
+  --color-text-secondary: #65676b;
+  --color-text-on-primary: #ffffff;
+
+  /* Bordures / separateurs */
+  --color-border: #ced0d4;
+  --color-divider: #e4e6e9;
+
+  /* Ombres */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+  /* Story (texte par defaut) */
+  --color-story-overlay: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] {
+  --color-primary: #2d88ff;
+  --color-primary-hover: #4d9bff;
+  --color-success: #4bcb71;
+  --color-danger: #f3425f;
+  --color-like: #2d88ff;
+
+  --color-bg: #18191a;
+  --color-surface: #242526;
+  --color-surface-hover: #3a3b3c;
+  --color-input-bg: #3a3b3c;
+
+  --color-text: #e4e6eb;
+  --color-text-secondary: #b0b3b8;
+  --color-text-on-primary: #ffffff;
+
+  --color-border: #3e4042;
+  --color-divider: #3e4042;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 4px 14px rgba(0, 0, 0, 0.6);
+
+  --color-story-overlay: rgba(0, 0, 0, 0.45);
+}
+
+/* Variables independantes du theme */
+:root {
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-round: 50%;
+  --navbar-height: 56px;
+  --transition-fast: 0.15s ease;
+  --transition-theme: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}

@@ -1,0 +1,34 @@
+# render.yaml — Blueprint Render pour le backend WentzyFace
+# -------------------------------------------------------------------
+# Ce fichier permet a Render de detecter et configurer automatiquement
+# le service quand tu connectes ton repo GitHub (wentzy948/wentzyface)
+# via "New +" -> "Blueprint" sur https://dashboard.render.com
+#
+# Variables d'environnement a renseigner manuellement dans le dashboard
+# Render apres la creation du service (onglet "Environment") :
+#   MONGO_URI    -> ta chaine de connexion MongoDB Atlas
+#   JWT_SECRET   -> une longue chaine aleatoire (genere-en une nouvelle,
+#                   ne reutilise jamais celle d'un exemple/tutoriel)
+#   CLIENT_URL   -> l'URL de ton frontend une fois deploye sur Vercel
+#                   (ex: https://wentzyface.vercel.app)
+# -------------------------------------------------------------------
+
+services:
+  - type: web
+    name: wentzyface-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
