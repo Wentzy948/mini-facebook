@@ -20,7 +20,6 @@ import Avatar from '../components/Avatar';
 const FriendsPage = () => {
   const { user: currentUser } = useAuth();
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
   const tab = searchParams.get('tab') || 'friends';
   const initialQuery = searchParams.get('q') || '';
 
