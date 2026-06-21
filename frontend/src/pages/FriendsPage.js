@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useSearchParams, Link, useNavigate } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { UserPlus, UserCheck, UserX, Search } from 'lucide-react';
 import api from '../api/axios';
 import { fileUrl } from '../api/axios';
