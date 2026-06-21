@@ -75,7 +75,10 @@ const authRateLimiter = (req, res, next) => {
 };
 
 // 4) Middlewares globaux
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000' }));
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://mini-facebook-theta.vercel.app'],
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' })); // limite la taille des payloads JSON
 app.use(express.urlencoded({ extended: true }));
 
