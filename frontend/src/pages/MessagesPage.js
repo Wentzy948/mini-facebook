@@ -5,6 +5,7 @@ import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 import { useSocket } from '../context/SocketContext';
 import Avatar from '../components/Avatar';
+import { formatTime } from '../utils/time';
 
 /**
  * Page Messagerie
